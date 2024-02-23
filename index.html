@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Encriptador</title>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido!! Oculta tu mensaje !!</h1>
+    </header>
+
+    <main>
+        <form class="entrada">
+            <h2>Coloca aqui tu mensaje</h2>
+            <textarea placeholder="Mensaje secreto" id="contenido" required></textarea>
+            
+            <input type="button" id = "encriptarBtn" onclick= "encript(document.getElementById('contenido').value)" value="Encriptar" >
+            <input type="button" id = "desencriptarBtn" onclick= "decript(document.getElementById('contenido').value)" value="Desencriptar">
+        </form>
+        <div class="salida">
+            <div id="mostrar">
+                <h2 id="cambio-texto">No hay nada que ver</h2>
+                <img src="img/policia.png" alt="" id="animacion">
+            </div>
+
+            <div id="oculto">
+                <h2 id="texto-salida">Este es tu mensaje secreto</h2>
+                <textarea id="devolver-texto"></textarea>
+                <img src="img/gatito.png" alt="" id="gato-final">
+                <h3>Tu secreto esta a salvo conmigo miau</h3>
+                <input type="button" onclick="copy()" value="Copiar texto" id="boton-copiar">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script src="js/encriptador.js"></script>
+</body>
+</html>
