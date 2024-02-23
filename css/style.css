@@ -58,22 +58,27 @@ input{
     box-shadow: 10px 5px 5px black;
 }
 
-.salida{
+.salida {
     display: inline-block;
     height: 100%;
+    width: 20%; /* Ajusta el ancho según sea necesario */
     margin-right: 10px;
     margin-left: 100px;
+    margin-top: 200px;
+    margin-bottom: auto;
     text-align: center;
     vertical-align: middle; 
+    overflow: auto; /* Añade desplazamiento vertical si es necesario */
+    box-sizing: border-box; /* Incluye el tamaño del borde y el relleno en el cálculo del tamaño */
 }
 
-.salida>#mostrar{
+.salida>#mostrar {
     width: 100%;
     height: 100%;
-    margin-top: 50%;
-    margin-bottom: 50%;
     text-align: center;
 }
+
+
 .salida>#oculto{
     display: none;
 }
