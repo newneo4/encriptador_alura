@@ -1,18 +1,47 @@
+html {
+    box-sizing: border-box;
+}
+*,*:before, *:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 body{
     background-image: url('../img/fondo.png');
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100ev;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
 }
 
 body h1,h2, h3, p{
     opacity: 0.7;
     color: white;
+    margin: 0;
+    padding: 0;
+}
+
+header>h1{
+    padding-left: 50px;
+    padding-top: 20px;
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .entrada{
-    display: inline-block;
-    width: 60%;
+    
+    flex: 3;
+    display: flex;
+    flex-direction: column;
     height: 100%;
     margin-left: 20px;
     margin-right: 15px;
@@ -22,14 +51,16 @@ body h1,h2, h3, p{
 .entrada h2{
     text-align: left;
     margin: 10px 10px;
+    padding-left: 30px;
 }
 
 .entrada textarea{
     display: block;
+    flex: 4;
     width: 90%;
     margin: auto;
     margin-bottom: 10px;
-    height: 525px;
+    height: 70%;
     padding: 10px 20px;
     box-sizing: border-box;
     border: 2px solid gray;
@@ -58,26 +89,38 @@ input{
     box-shadow: 10px 5px 5px black;
 }
 
+.botones{
+    flex: 1;
+}
+
 .salida {
-    display: inline-block;
+    flex: 1.2;
     height: 100%;
-    width: 20%; /* Ajusta el ancho según sea necesario */
-    margin-right: 10px;
-    margin-left: 100px;
-    margin-top: 200px;
-    margin-bottom: auto;
+    /* Ajusta el ancho según sea necesario */
+    /*margin-top: 200px;*/
     text-align: center;
     vertical-align: middle; 
-    overflow: auto; /* Añade desplazamiento vertical si es necesario */
     box-sizing: border-box; /* Incluye el tamaño del borde y el relleno en el cálculo del tamaño */
 }
 
 .salida>#mostrar {
     width: 100%;
     height: 100%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
+.gato-policia{
+    
+}
+
+.salida>#mostrar>#animacion{
+    height: 80%;
+    width: 100%;
+    object-fit: contain;
+}
 
 .salida>#oculto{
     display: none;
@@ -110,6 +153,10 @@ input{
 }
 
 @media only screen and (max-width: 600px) {
+    main{
+        flex-direction: column;
+    }
+
     body {
         background-image: url('../img/fondo.png');
         background-repeat: no-repeat;

@@ -31,7 +31,6 @@ function encript(texto){
 }
 
 function decript(texto){
-    console.log(texto);
 
     if (/[A-Z0-9]/.test(texto)) {
         alert("Solo puedes usar letras minúsculas sin mayúsculas ni números!!");
@@ -45,10 +44,11 @@ function decript(texto){
     
         for(let key in valores){
             if(valores.hasOwnProperty(key)){
-                texto = texto.replaceAll(valores[key],key);
+                texto = texto.replace(valores[key],key);
             }
         }
         document.getElementById("devolver-texto").textContent = texto;
+
     } else{
         document.getElementById("cambio-texto").textContent="No te quieras pasar de listo manito";
     }

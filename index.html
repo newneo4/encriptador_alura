@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Encriptador</title>
 </head>
@@ -15,14 +16,17 @@
         <form class="entrada">
             <h2>Coloca aqui tu mensaje</h2>
             <textarea placeholder="Mensaje secreto" id="contenido" required></textarea>
-            
-            <input type="button" id = "encriptarBtn" onclick= "encript(document.getElementById('contenido').value)" value="Encriptar" >
-            <input type="button" id = "desencriptarBtn" onclick= "decript(document.getElementById('contenido').value)" value="Desencriptar">
+            <div class="botones">
+                <input type="button" id = "encriptarBtn" onclick= "encript(document.getElementById('contenido').value)" value="Encriptar" >
+                <input type="button" id = "desencriptarBtn" onclick= "decript(document.getElementById('contenido').value)" value="Desencriptar">
+            </div>
         </form>
         <div class="salida">
             <div id="mostrar">
                 <h2 id="cambio-texto">No hay nada que ver</h2>
-                <img src="img/policia.png" alt="" id="animacion">
+                <div class="gato-policia">
+                    <img src="img/policia.png" alt="" id="animacion">
+                </div>
             </div>
 
             <div id="oculto">
@@ -32,7 +36,7 @@
                 <h3>Tu secreto esta a salvo conmigo miau</h3>
                 <input type="button" onclick="copy()" value="Copiar texto" id="boton-copiar">
             </div>
-        </div>
+        </div> 
     </main>
 
     <footer>
