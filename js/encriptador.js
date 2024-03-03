@@ -1,11 +1,11 @@
 let verificar = true;
-const valores = {
-    "e" :"enter",
-    "i" :"imes",
-    "a" :"ai",
-    "o" : "ober",
-    "u" :"ufat"
-};
+const valores = [
+    ["e" ,"enter"],
+    ["i" ,"imes"],
+    ["a" ,"ai"],
+    ["o" , "ober"],
+    ["u" ,"ufat"]
+];
 
 function encript(texto){
     console.log(texto.length);
@@ -19,10 +19,8 @@ function encript(texto){
             verificar = false;
         }
 
-        for(let key in valores){
-            if(valores.hasOwnProperty(key)){
-                texto = texto.replaceAll(key, valores[key]);
-            }
+        for(let [key,value] of valores){
+            texto = texto.replaceAll(key, value);
         }
         document.getElementById("devolver-texto").textContent = texto;
     } else{
@@ -42,12 +40,13 @@ function decript(texto){
             verificar = false;
         }
     
-        for(let key in valores){
-            if(valores.hasOwnProperty(key)){
-                texto = texto.replace(valores[key],key);
-            }
+        const n_valores = [...valores].reverse()
+
+        for(let [key,value] of n_valores){
+            texto = texto.replaceAll(value,key);
         }
         document.getElementById("devolver-texto").textContent = texto;
+
 
     } else{
         document.getElementById("cambio-texto").textContent="No te quieras pasar de listo manito";
